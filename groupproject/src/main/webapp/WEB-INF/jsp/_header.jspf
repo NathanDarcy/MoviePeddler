@@ -11,46 +11,65 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-<script defer src="https://use.fontawesome.com/releases/v5.4.2/js/all.js" integrity="sha384-wp96dIgDl5BLlOXb4VMinXPNiB32VYBSoXOoiARzSTXY+tsK8yDTYfvdTyqzdGGN" crossorigin="anonymous"></script>
-
-
+    <script defer src="https://use.fontawesome.com/releases/v5.4.2/js/all.js"
+            integrity="sha384-wp96dIgDl5BLlOXb4VMinXPNiB32VYBSoXOoiARzSTXY+tsK8yDTYfvdTyqzdGGN"
+            crossorigin="anonymous"></script>
 
 
 </head>
 <body>
 <div class="container">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <img class="navbar-brand" alt="" src='<c:url value="/images/navbar-logo-white.png"/>' height="40px" width="31px">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link ${view eq 'home.jsp'?'active':''}" href="<c:url value="homepage"/>">Home</a></li>
+        <img class="navbar-brand" alt="" src='<c:url value="/images/navbar-logo-white.png"/>' height="40px"
+             width="31px">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <li class="nav-item"><a class="nav-link ${view eq 'register.jsp'?'active':''}" href="<c:url value="registerpage"/>">Register</a></li>
-            <li class="nav-item"><a class="nav-link ${view eq 'product-listing.jsp'?'active':''}" href="<c:url value="productlistingpage"/>">Product Listing</a></li>
-            <li class="nav-item"><a class="nav-link ${view eq 'order-history.jsp'?'active':''}" href="<c:url value="orderhistorypage"/>">Order History</a></li>
-            <li class="nav-item"><a class="d-inline-block nav-link ${view eq 'shopping-cart.jsp'?'active':''}" href="<c:url value="shoppingcartpage"/>">Shopping Cart</a> 
-            <c:if test="${not empty shoppingcart}">
-            <span class="alert alert-primary" style="padding-top: .25rem; padding-bottom: .25rem; padding-left: .5rem; padding-right: .5rem;"><fmt:formatNumber type="currency" value="${shoppingcart.total}"/> </span>
-            </c:if>
-            </li>
-        </ul>
-        <%-- Display username if logged in, otherwise show Login button --%>
-        <ul class="navbar-nav ml-auto">
-            <c:choose>
-                <c:when test="${not empty user.loginId}">
-                    <li class="nav-item nav-link"><c:out value="User: ${user.loginId}"/></li>
-                    <li class="nav-item"><a class="nav-link ${view eq 'login.jsp'?'active':''}" href="<c:url value="logout"/>">Logout</a></li>
-                </c:when>
-                <c:otherwise>
-                    <li class="nav-item ml-auto"><a class="nav-link" href="<c:url value="loginpage"/>">Login</a></li>
-                </c:otherwise>
-            </c:choose>
-        </ul>
-      </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link ${view eq 'home.jsp'?'active':''}"
+                                        href="<c:url value="homepage"/>">Home</a></li>
+
+                <li class="nav-item"><a class="nav-link ${view eq 'register.jsp'?'active':''}"
+                                        href="<c:url value="registerpage"/>">Register</a></li>
+
+
+                <c:if test="${not empty user.loginId}">
+                    <li class="nav-item"><a class="nav-link ${view eq 'product-listing.jsp'?'active':''}"
+                                            href="<c:url value="productlistingpage"/>">Product Listing</a></li>
+
+                    <li class="nav-item"><a class="nav-link ${view eq 'order-history.jsp'?'active':''}"
+                                            href="<c:url value="orderhistorypage"/>">Order History</a></li>
+
+                    <li class="nav-item"><a class="d-inline-block nav-link ${view eq 'shopping-cart.jsp'?'active':''}"
+                                            href="<c:url value="shoppingcartpage"/>">Shopping Cart</a>
+                        <c:if test="${not empty shoppingcart}">
+                            <span class="alert alert-primary"
+                                  style="padding-top: .25rem; padding-bottom: .25rem; padding-left: .5rem; padding-right: .5rem;"><fmt:formatNumber
+                                    type="currency" value="${shoppingcart.total}"/> </span>
+                        </c:if>
+                    </li>
+
+                </c:if>
+
+            </ul>
+            <%-- Display username if logged in, otherwise show Login button --%>
+            <ul class="navbar-nav ml-auto">
+                <c:choose>
+                    <c:when test="${not empty user.loginId}">
+                        <li class="nav-item nav-link"><c:out value="User: ${user.loginId}"/></li>
+                        <li class="nav-item"><a class="nav-link ${view eq 'login.jsp'?'active':''}"
+                                                href="<c:url value="logout"/>">Logout</a></li>
+                    </c:when>
+                    <c:otherwise>
+                        <li class="nav-item ml-auto"><a class="nav-link" href="<c:url value="loginpage"/>">Login</a>
+                        </li>
+                    </c:otherwise>
+                </c:choose>
+            </ul>
+        </div>
     </nav>
 
 
