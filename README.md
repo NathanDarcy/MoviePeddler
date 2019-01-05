@@ -1,4 +1,4 @@
-# CS5012-GP
+# Movie Peddler
 Group Project for CS4012/CS5012
 
 # About this project
