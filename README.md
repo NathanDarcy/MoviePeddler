@@ -3,7 +3,7 @@ Group Project for CS4012/CS5012
 
 # About this project
 
-  This was originally a semester group project from an Enterprise Web Development course at UMSL, which I have kept and continued to add features. This is a Spring Boot project that simulates an e-commerce website that sells movies. It has a mobile responsive front-end through the use of bootstrap, and it utilizes a MySQL Database managed by the Hibernate framework and Spring’s CRUDRepository. All HTTP requests are handled by a Spring Controller. The application is configured to work on a local Tomcat web server.
+  This was originally a semester group project from an Enterprise Web Development course at UMSL, which I have kept and continued to add features. This is a Spring Boot project that simulates an e-commerce website that sells movies. It has a mobile responsive front-end through the use of bootstrap, and it utilizes a MySQL Database managed by the Hibernate framework and Spring’s CRUDRepository. All HTTP requests are handled by a Spring Controller. The application is configured to work on a local Tomcat web server and Java 1.8.
   
 ## To Setup/Run This Project
 
@@ -21,3 +21,4 @@ Group Project for CS4012/CS5012
     Spring Boot
     Hibernate
     Bootstrap
+    Java 1.8
